@@ -1,0 +1,407 @@
+body {
+  margin: 0;
+  padding: 0 0 100px 0;
+  font-family: sans-serif;
+  overflow-x: hidden; }
+
+.closeButton {
+  position: relative;
+  left: 260px;
+  bottom: 200px;
+}
+.innerButton {
+    background-color: #FFFFFF; 
+  border-radius: 4px;
+  border: none;
+  color: #717171;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 350;
+  margin: 4px 2px;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0.15;
+}
+.modalStyle{
+      position: 'relative';
+      backgroundColor: 'transparent';
+      padding: 1;
+      
+    }
+
+.backdrop {
+  z-index: 1000;
+}
+
+.heroSection {
+  background: url("https://s3-us-west-1.amazonaws.com/photo-gallery1/1_photos/1.jpg") 50% no-repeat;
+  background-size: cover;
+  height: 60vh;
+  text-align: center;
+  
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+  cursor: pointer;
+  position: static;
+}
+
+/*.hero-section .hero-section-text {
+  position: absolute;
+  color: #fefefe;
+  text-shadow: 1px 1px 2px #0a0a0a;
+}*/
+
+.heroSection .heroViewphotosButton {
+  position: absolute;
+  bottom: 42%;
+  left: 1%; 
+
+  background-color: #FFFFFF; 
+  border-radius: 4px;
+  border: none;
+  color: #717171;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 350;
+  margin: 4px 2px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+
+.heroSection .heroShareButton {
+  position: relative;
+  bottom: 42%;
+  left: 41%;
+
+
+  background-color: #FFFFFF; 
+  border-radius: 4px;
+  border: none;
+  color: #8F8F8F;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 350;
+  margin: 4px 2px;
+  cursor: pointer; 
+  z-index: 100;
+}
+
+.heroSection .heroSaveButton {
+  position: relative;
+  bottom: 42%;
+  left: 42%; 
+
+
+  background-color: #FFFFFF; 
+  border-radius: 4px;
+  border: none;
+  color: #8F8F8F;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 350;
+  margin: 4px 2px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+
+
+
+
+.App {
+  text-align: center;
+  position: relative; 
+}
+
+.AppLogo {
+  height: 400px;
+}
+.wrapper {
+  width: 100%;
+  height: 425px;
+  /*border: 1px solid black;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+    position:relative;
+    bottom: 200px;
+}*/
+
+.modalIcon {
+  color: #d9d9d9 ;
+  transition-duration: 0.4s;
+}
+.modalIcon:hover {
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.modalIcon:active {
+  transform: translateY(3px);
+}
+
+
+/*.backdrop {
+      position: 'fixed';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      backgroundColor: rgba(195,195,195,0.3);
+      padding: 50;
+    }*/
+
+.card {
+  border: 3px #f3f3f3 solid;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  padding: 10px;
+  max-width: 100px;*/
+  /*
+  padding: 10px;
+  max-width: 220px;
+  */
+  text-align: left;
+  margin: 0 auto; }
+  .card img {
+    max-width: calc(100%);
+    margin: 0 auto;
+    display: block; }
+
+
+.cardsSliderWrapper {
+  display: flex;
+  position: absolute;
+  transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  .cardsSliderWrapper .card {
+    flex: 1;
+    min-width: 150px;
+    opacity: 0.4;
+    transform: scale(0.8);
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+    transition: opacity 300ms linear, border-color 300ms linear, background-color 300ms linear, transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+    .cardsSliderWrapper .card .details {
+      opacity: 0;
+      transition: opacity 150ms linear; }
+
+.cards-slider.active-slide-0 #card-0 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-0 #card-0 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-1 #card-1 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-1 #card-1 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-2 #card-2 {
+  opacity: 1;
+  transform: scale(1);
+}
+  .cards-slider.active-slide-2 #card-2 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-3 #card-3 {
+  opacity: 1;
+  transform: scale(1);
+}
+  .cards-slider.active-slide-3 #card-3 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-4 #card-4 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-4 #card-4 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-5 #card-5 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-5 #card-5 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-6 #card-6 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-6 #card-6 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-7 #card-7 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-7 #card-7 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-8 #card-8 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-8 #card-8 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-9 #card-9 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-9 #card-9 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-10 #card-10 {
+  opacity: 1;
+  transform: scale(1);
+   }
+  .cards-slider.active-slide-10 #card-10 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-11 #card-11 {
+  opacity: 1;
+  transform: scale(1);
+   }
+  .cards-slider.active-slide-11 #card-11 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-12 #card-12 {
+  opacity: 1;
+  transform: scale(1);
+   }
+  .cards-slider.active-slide-12 #card-12 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-13 #card-13 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-13 #card-13 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-14 #card-14 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-14 #card-14 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-15 #card-15 {
+  opacity: 1;
+  transform: scale(1);
+  }
+  .cards-slider.active-slide-15 #card-15 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-16 #card-16 {
+  opacity: 1;
+  transform: scale(1);
+  }
+  .cards-slider.active-slide-16 #card-16 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-17 #card-17 {
+  opacity: 1;
+  transform: scale(1);
+ }
+  .cards-slider.active-slide-17 #card-17 .details {
+    opacity: 1; }
+
+.cards-slider.active-slide-18 #card-18 {
+  opacity: 1;
+  transform: scale(1);
+  background-color: #f3f3f3;
+  border-color: #f3f3f3; }
+  .cards-slider.active-slide-18 #card-18 .details {
+    opacity: 1; }
+
+
+/*.col {
+  height: 264px;
+  position: relative; }
+  .col:before, .col:after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 120%;
+    background: linear-gradient(to right, white 15%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; }
+  .col:after {
+    left: auto;
+    right: 0;
+    background: linear-gradient(to left, white 15%, rgba(255, 255, 255, 0) 100%); }*/
+
+.cardsSlider {
+  position: relative;
+  max-width: 226px;
+  margin: 0 auto; 
+}
+.cardsSlider:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100px;
+    /*outline: 5px solid #61DAFB;*/
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+
