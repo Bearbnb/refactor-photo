@@ -125,7 +125,7 @@ class App extends Component {
 
 
 
-            {console.log(this.props)}
+            
 
         <button onClick={this.props.handleClose} class="fas fa-times fa-2x" className={`${styles.closeButton} ${styles.innerButton}`}>{`x`}</button>
 

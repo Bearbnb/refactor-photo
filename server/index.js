@@ -16,6 +16,7 @@ app.get('/photos/:id', (req, res) => {
 	controller.getAllPhotos((data) => {
 		res.send(data);
 	});
+	console.log('*hit*');
 });
 
 

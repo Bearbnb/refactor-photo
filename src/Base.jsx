@@ -17,6 +17,21 @@ class Base extends Component {
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
   }
+  componentDidMount() {
+
+    const idPath = window.location.pathname;
+    const id = idPath.substring(1, idPath.length - 1);
+     $.ajax({
+       method: 'GET',
+       url: `/photos/${id}`,
+     })
+       .done((data) => {
+         var new_data = { properties: data };
+         this.setState({ data: new_data });
+         console.log('went thru:)', Array.isArray(this.state.data.properties))
+       })
+       .fail(() => console.log('didn\'t go through :('));
+  }
 
   showModal() {
     this.setState({ show: true });
@@ -26,30 +41,6 @@ class Base extends Component {
     this.setState({ show: false });
   };
 
-  componentDidMount() {
-
-    const idPath = window.location.pathname;
-    const id = idPath.substring(1, idPath.length - 1);
-
-    this.setState({data: data})
-    var that = this;
-    var settings = {
-      "async": true,
-      "crossDomain": true,
-      //'url': 'http://localhouse:3007/house'
-      "url": `/photos/${id}`,
-      "method": "GET",
-      "headers": {
-        "Cache-Control": "no-cache",
-        "Postman-Token": "21422b57-759d-4710-83dc-565d97eae64f"
-      }
-    }
-
-    $.ajax(settings).done(function (response) {
-      var new_data = {properties: response};
-      that.setState({data: new_data})
-    });
-  }
 
   render() {
     return (
